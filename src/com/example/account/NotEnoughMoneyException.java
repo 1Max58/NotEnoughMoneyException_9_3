@@ -14,6 +14,6 @@ public class NotEnoughMoneyException extends Exception {
     public String toString() {
         return "Not enough money on account " + accountNumber +
                 ": balance (" + balance +
-                " ) is less than required sum (" + sum + ")";
+                ") is less than required sum (" + sum + ")";
     }
 }
