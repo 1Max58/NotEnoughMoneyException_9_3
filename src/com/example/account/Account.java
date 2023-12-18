@@ -35,7 +35,10 @@ public class Account {
         accountNumber = an;
     }
 
-    public void transfer(int sum, Account recipient) {
+    public void transfer(int sum, Account recipient) throws NotEnoughMoneyException {
+        if (sum > balance) {
+            throw new NotEnoughMoneyException(accountNumber, balance, sum);
+        }
         balance -= sum;
         recipient.balance += sum;
     }
